@@ -135,7 +135,7 @@ export function Navbar() {
                 <img
                   src="/logo.png"
                   alt="GoHelp Logo"
-                  className="h-[200px] w-auto"
+                  className="h-30 w-auto"
                 />
               </motion.div>
             </Link>

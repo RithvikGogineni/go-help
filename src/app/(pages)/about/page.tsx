@@ -43,20 +43,20 @@ const team = [
   {
     name: 'Bhagavathi Katamaraju Ediga',
     role: 'Founder & CEO',
-    bio: 'huh? I\'m an student',
+    bio: 'Director of Management',
     avatar: 'https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=',
   },
   {
     name: 'Rithvik Gogineni',
     role: 'Founder & CEO',
-    bio: 'huh? I\'m an student',
+    bio: 'Director of Product Development',
     avatar: 'https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=',
   },
   {
     name: 'Ahalia Foreman',
     role: 'Founder & CEO',
-    bio: 'huh? I\'m an student',
-    avatar: 'https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=',
+    bio: 'Director of Design',
+    avatar: 'ahalia.jpeg',
   },
 ];
 
@@ -106,7 +106,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80"
+                    src="https://www.unicef.org/jamaica/sites/unicef.org.jamaica/files/styles/hero_extended/public/Jamaica-0000012.jpg.webp?itok=5SNokFsh"
                     alt="Community volunteers in Jamaica"
                     className="w-full h-full object-cover"
                   />
@@ -224,7 +224,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80"
+                    src="https://www.jnfoundation.com/wp-content/uploads/2020/02/igibf4cg1eyorlc7l2lak0ztxz1u4em3tjyjz-dzeos_0.jpg"
                     alt="Jamaican volunteers working together"
                     className="w-full h-full object-cover"
                   />
@@ -291,7 +291,7 @@ export default function AboutPage() {
                     <img
                       src={member.avatar}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-full"
                     />
                   </div>
                   <CardContent className="p-6">

@@ -1,5 +1,5 @@
-import { 
-  Volunteer, Organization, Opportunity, HelpRequest, 
+import {
+  Volunteer, Organization, Opportunity, HelpRequest,
   Donation, Cause, Event, Conversation, LeaderboardEntry,
   Testimonial, PlatformStats, AdminStats, Badge
 } from '@/types';
@@ -154,7 +154,7 @@ export const mockOrganizations: Organization[] = [
     donationLink: 'https://www.mustardseed.org/donate',
     createdAt: new Date('2023-02-01'),
     updatedAt: new Date('2024-06-01'),
-    avatar: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=200',
+    avatar: 'https://www.mustardseed.com/wp-content/uploads/2024/01/c-w-dis.jpg',
   },
   {
     id: 'org3',
@@ -319,7 +319,7 @@ export const mockOpportunities: Opportunity[] = [
     spotsFilled: 4,
     requirements: ['Background check required', 'Compassionate nature'],
     createdAt: new Date('2024-11-20'),
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600',
+    image: 'https://jis.gov.jm/media/2021/09/Elderly-Care.gif',
   },
   {
     id: 'opp4',
@@ -435,7 +435,7 @@ export const mockOpportunities: Opportunity[] = [
     spotsFilled: 2,
     requirements: ['Administrative experience helpful'],
     createdAt: new Date('2024-11-22'),
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600',
+    image: 'https://forthechildjamaica.com/wp-content/uploads/2021/06/shutterstock_1895009596-min-scaled.jpg',
   },
 ];
 
