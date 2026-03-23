@@ -1,0 +1,66 @@
+
+> go-help@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+   ▲ Next.js 15.2.0 (Turbopack)
+   - Local:        http://localhost:3002
+   - Network:      http://172.20.10.6:3002
+
+ ✓ Starting...
+ ✓ Ready in 784ms
+ ○ Compiling /opportunities ...
+ ✓ Compiled /opportunities in 2.1s
+ HEAD /opportunities 200 in 2418ms
+ ✓ Compiled /organizations in 425ms
+ HEAD /organizations 200 in 546ms
+ GET /organizations 200 in 279ms
+ ✓ Compiled /favicon.ico in 262ms
+ GET /favicon.ico 200 in 302ms
+ GET /opportunities 200 in 253ms
+ GET /organizations 200 in 159ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 131ms
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+ ⨯ TypeError: Cannot read properties of null (reading 'useState')
+    at AuthProvider (src/context/AuthContext.tsx:20:48)
+  18 |
+  19 | export function AuthProvider({ children }: { children: ReactNode }) {
+> 20 |   const [user, setUser] = useState<User | null>(null);
+     |                                                ^
+  21 |   const [isLoading, setIsLoading] = useState(true);
+  22 |
+  23 |   // Check for stored user on mount {
+  digest: '3138579924'
+}
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+[TypeError: Cannot read properties of null (reading 'use')]
+ GET /organizations 200 in 737ms
+ GET /opportunities 500 in 735ms
+ GET /favicon.ico 200 in 35ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 32ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 73ms
+ GET /organizations 200 in 333ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 32ms
+ GET /opportunities 200 in 334ms
+ GET /organizations 200 in 315ms
+ GET /opportunities 200 in 57ms
+ ○ Compiling /donations ...
+ ✓ Compiled /donations in 795ms
+ GET /donations 200 in 827ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1140ms
+ GET / 200 in 1170ms
+ GET / 200 in 287ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 64ms
