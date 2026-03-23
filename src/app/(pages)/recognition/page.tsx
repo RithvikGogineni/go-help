@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Trophy, Medal, Star, Flame, Award, TrendingUp, Users,
-  Heart, Share2, Sparkles
+  Heart, Share2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -13,47 +13,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerContainer';
-import { AnimatedCounter } from '@/components/animations/AnimatedCounter';
 import { mockLeaderboard, mockBadges, mockVolunteers } from '@/mock/data';
 
-const Confetti = () => {
-  const colors = ['#10B981', '#F59E0B', '#EF4444', '#3B82F6', '#8B5CF6'];
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          initial={{ 
-            y: -20, 
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-            opacity: 1,
-            rotate: 0
-          }}
-          animate={{ 
-            y: typeof window !== 'undefined' ? window.innerHeight + 20 : 800,
-            rotate: Math.random() * 360,
-            opacity: 0
-          }}
-          transition={{ 
-            duration: 3 + Math.random() * 2,
-            ease: 'linear',
-            delay: Math.random() * 2
-          }}
-          className="absolute w-3 h-3 rounded-sm"
-          style={{ backgroundColor: colors[Math.floor(Math.random() * colors.length)] }}
-        />
-      ))}
-    </div>
-  );
-};
+
 
 export default function RecognitionPage() {
-  const [showConfetti, setShowConfetti] = useState(false);
   const [timeframe, setTimeframe] = useState('monthly');
 
   const handleCelebrate = () => {
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 5000);
+    // Celebration effect removed
   };
 
   const topThree = mockLeaderboard.slice(0, 3);
@@ -61,7 +29,6 @@ export default function RecognitionPage() {
 
   return (
     <div className="min-h-screen pb-20 relative">
-      {showConfetti && <Confetti />}
 
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-orange-50 via-orange-50 to-rose-50 dark:from-orange-950/30 dark:via-orange-950/20 dark:to-rose-950/30 py-12 lg:py-20 overflow-hidden">
@@ -79,7 +46,6 @@ export default function RecognitionPage() {
               transition={{ type: 'spring', duration: 0.8 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-sm font-medium mb-6"
             >
-              <Sparkles className="w-4 h-4" />
               Celebrating Our Heroes
             </motion.div>
 
@@ -98,7 +64,6 @@ export default function RecognitionPage() {
               className="rounded-full gradient-warm hover:opacity-90"
               onClick={handleCelebrate}
             >
-              <Sparkles className="w-4 h-4 mr-2" />
               Celebrate Volunteers
             </Button>
           </FadeIn>

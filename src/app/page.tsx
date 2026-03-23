@@ -10,17 +10,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// ReactBits Components
-import SplitText from '@/components/SplitText';
-import BlurText from '@/components/BlurText';
-import ShinyText from '@/components/ShinyText';
-import CountUp from '@/components/CountUp';
-import DecryptedText from '@/components/DecryptedText';
-import SpotlightCard from '@/components/SpotlightCard';
-import StarBorder from '@/components/StarBorder';
-import Magnet from '@/components/Magnet';
-
-const Aurora = dynamic(() => import('@/components/Aurora'), { ssr: false });
+// ReactBits Components (Removed for AI-like UI cleanup)
 
 // ─── Data ───────────────────────────────────────────────────────────
 const stats = [
@@ -60,7 +50,7 @@ const steps = [
     title: 'Impact',
     desc: 'Track your contributions, earn badges, and see the difference you make.',
     icon: Zap,
-    gradient: 'from-violet-400 to-purple-500',
+    gradient: 'from-cyan-400 to-green-500',
     bg: 'bg-violet-50',
   },
 ];
@@ -191,27 +181,17 @@ export default function HomePage() {
             >
               <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-yellow-dark" />
-                <ShinyText
-                  text="Jamaica's #1 Volunteer Platform"
-                  speed={3}
-                  className="text-sm font-semibold text-foreground/80 tracking-wide"
-                />
+                <span className="text-sm font-semibold text-foreground/80 tracking-wide">
+                  Jamaica&apos;s #1 Volunteer Platform
+                </span>
               </div>
             </motion.div>
 
             {/* Main heading */}
             <div className="mb-4">
-              <SplitText
-                text="Make a Real Difference"
-                tag="h1"
-                className="text-5xl sm:text-7xl lg:text-[6.5rem] font-black text-gray-800/80 tracking-[-0.03em] leading-[0.95]"
-                delay={25}
-                duration={0.8}
-                from={{ opacity: 0, y: 80, rotateX: -40 }}
-                to={{ opacity: 1, y: 0, rotateX: 0 }}
-                splitType="chars"
-                textAlign="center"
-              />
+              <h1 className="text-5xl sm:text-7xl lg:text-[6.5rem] font-black text-gray-800/80 tracking-[-0.03em] leading-[0.95] text-center">
+                Make a Real Difference
+              </h1>
             </div>
 
             {/* Gradient subheading */}
@@ -231,12 +211,9 @@ export default function HomePage() {
               transition={{ delay: 0.9, duration: 0.8 }}
               className="max-w-2xl mx-auto mb-14"
             >
-              <BlurText
-                text="Connect with NGOs, find meaningful volunteer opportunities, and create lasting impact across Jamaica — all in one powerful platform."
-                className=" md:text-xl text-gray-800/80 text-5xl font-bold leading-relaxed"
-                delay={15}
-                animateBy="words"
-              />
+              <p className="md:text-xl text-gray-800/80 text-xl font-medium leading-relaxed">
+                Connect with NGOs, find meaningful volunteer opportunities, and create lasting impact across Jamaica — all in one powerful platform.
+              </p>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -246,34 +223,30 @@ export default function HomePage() {
               transition={{ delay: 1.2, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
-              <Magnet padding={60} magnetStrength={3}>
-                <Link href="/opportunities">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="relative group cursor-pointer"
-                  >
-                    <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-yellow-300 to-emerald-400 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#0D0D0D] font-bold text-lg rounded-xl shadow-2xl shadow-amber-500/25">
-                      Start Volunteering
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </motion.div>
-                </Link>
-              </Magnet>
+              <Link href="/opportunities">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="relative group cursor-pointer"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-yellow-300 to-emerald-400 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#0D0D0D] font-bold text-lg rounded-xl shadow-2xl shadow-amber-500/25">
+                    Start Volunteering
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </motion.div>
+              </Link>
 
-              <Magnet padding={60} magnetStrength={3}>
-                <Link href="/request-help">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="flex items-center gap-3 px-8 py-4 rounded-xl border border-white/15 text-gray-900/80 font-semibold text-lg hover:bg-white/[0.06] hover:border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
-                  >
-                    Request Help
-                    <Shield className="w-5 h-5 text-gray-800/80" />
-                  </motion.div>
-                </Link>
-              </Magnet>
+              <Link href="/request-help">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex items-center gap-3 px-8 py-4 rounded-xl border border-white/15 text-gray-900/80 font-semibold text-lg hover:bg-white/[0.06] hover:border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
+                >
+                  Request Help
+                  <Shield className="w-5 h-5 text-gray-800/80" />
+                </motion.div>
+              </Link>
             </motion.div>
 
             {/* Mini stats */}
@@ -286,7 +259,7 @@ export default function HomePage() {
               {stats.slice(0, 3).map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl sm:text-4xl font-black text-gray-800/80 tabular-nums">
-                    <CountUp to={stat.value} separator="," duration={2.5} />
+                    {stat.value.toLocaleString()}
                     <span className="bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">{stat.suffix}</span>
                   </div>
                   <p className="text-sm text-gray-800/80 mt-1 font-medium tracking-wide uppercase">{stat.label}</p>
@@ -321,7 +294,7 @@ export default function HomePage() {
                     <stat.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mb-1 tabular-nums">
-                    <CountUp to={stat.value} separator="," duration={2} />
+                    {stat.value.toLocaleString()}
                     <span className={`bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>{stat.suffix}</span>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{stat.label}</p>
@@ -481,15 +454,8 @@ export default function HomePage() {
 
       {/* ═══════════════════ TESTIMONIALS ═══════════════════ */}
       <section className="py-24 lg:py-32 relative overflow-hidden bg-[#050505]">
-        {/* Aurora background */}
-        <div className="absolute inset-0 opacity-40">
-          <Aurora
-            colorStops={['#F59E0B', '#10B981', '#3B82F6']}
-            amplitude={0.8}
-            speed={0.3}
-            blend={0.8}
-          />
-        </div>
+        {/* Simplified background */}
+        <div className="absolute inset-0 bg-white/[0.02]" />
 
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -619,15 +585,8 @@ export default function HomePage() {
 
       {/* ═══════════════════ CTA ═══════════════════ */}
       <section className="py-24 lg:py-32 relative overflow-hidden bg-[#050505]">
-        {/* Aurora */}
-        <div className="absolute inset-0 opacity-50">
-          <Aurora
-            colorStops={['#F59E0B', '#10B981', '#F59E0B']}
-            amplitude={2.0}
-            speed={0.6}
-            blend={0.5}
-          />
-        </div>
+        {/* Simplified background */}
+        <div className="absolute inset-0 bg-white/[0.02]" />
 
         {/* Radial glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[150px]" />
@@ -644,14 +603,9 @@ export default function HomePage() {
             </span>
 
             <div className="mb-8">
-              <DecryptedText
-                text="Ready to Change the World?"
-                speed={60}
-                maxIterations={12}
-                revealDirection="center"
-                className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight"
-                encryptedClassName="text-white/20"
-              />
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight">
+                Ready to Change the World?
+              </h2>
             </div>
 
             <p className="text-lg sm:text-xl text-white/40 mb-14 max-w-2xl mx-auto leading-relaxed">
@@ -660,34 +614,30 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Magnet padding={80} magnetStrength={4}>
-                <Link href="/signup">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="relative group cursor-pointer"
-                  >
-                    <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-400 via-yellow-300 to-emerald-400 rounded-2xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#0D0D0D] font-bold text-lg rounded-xl shadow-2xl shadow-amber-500/25">
-                      Join GoHelp Today
-                      <img src="/bee.png" alt="" className="w-10 h-auto" aria-hidden="true" />
-                    </div>
-                  </motion.div>
-                </Link>
-              </Magnet>
+              <Link href="/signup">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="relative group cursor-pointer"
+                >
+                  <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-400 via-yellow-300 to-emerald-400 rounded-2xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#0D0D0D] font-bold text-lg rounded-xl shadow-2xl shadow-amber-500/25">
+                    Join GoHelp Today
+                    <img src="/bee.png" alt="" className="w-10 h-auto" aria-hidden="true" />
+                  </div>
+                </motion.div>
+              </Link>
 
-              <Magnet padding={80} magnetStrength={4}>
-                <Link href="/about">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="flex items-center gap-3 px-10 py-5 rounded-xl border border-white/15 text-white font-semibold text-lg hover:bg-white/[0.06] hover:border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
-                  >
-                    Learn More
-                    <ArrowRight className="w-5 h-5 text-white/60" />
-                  </motion.div>
-                </Link>
-              </Magnet>
+              <Link href="/about">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex items-center gap-3 px-10 py-5 rounded-xl border border-white/15 text-white font-semibold text-lg hover:bg-white/[0.06] hover:border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
+                >
+                  Learn More
+                  <ArrowRight className="w-5 h-5 text-white/60" />
+                </motion.div>
+              </Link>
             </div>
           </motion.div>
         </div>
